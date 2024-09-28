@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador Sintáctico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .errores {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analizador Sintáctico</h1>
+    <form method="post">
+        <label for="code">Escribe tu código:</label><br>
+        <textarea id="code" name="code" placeholder="//Escribe tu código aquí"></textarea><br>
+        <input type="submit" value="Analizar">
+    </form>
+
+    {% if request.form.get('code') %}
+        <h3>Código analizado:</h3>
+        <pre>{{ request.form.get('code') }}</pre>
+    {% endif %}
+
+    <div class="contenedor">
+        {% if resultado %}
+            <h2>Resultado del Análisis:</h2>
+            <p style="color: {{ 'green' if color == 1 else 'rgb(159, 4, 4)' }}; font-weight: bold;">
+                {{ resultado }}
+            </p>
+        {% endif %}
+    </div>
+
+    <div class="errores">
+        {% if errores %}
+            <h2>Errores Encontrados:</h2>
+            <pre>{{ errores | join('\n') }}</pre>
+        {% endif %}
+    </div>
+
+    <div class="contenedor_tabla">
+        {% if tokens %}
+            <h2>Tokens:</h2>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                    <th>Línea</th>
+                </tr>
+                {% for tipo, valor, linea in tokens %}
+                <tr>
+                    <td>{{ tipo }}</td>
+                    <td>{{ valor }}</td>
+                    <td>{{ linea }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No se encontraron tokens.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

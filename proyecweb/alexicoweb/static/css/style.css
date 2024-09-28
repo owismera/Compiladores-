@@ -1,0 +1,125 @@
+/* Contenedor Principal */
+.contenedor {
+    font-family: 'Arial', sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fffbe6; /* Fondo amarillo claro */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Input Container */
+.input-container {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+/* Code Input */
+.code-input {
+    width: 80%; /* Ajusta el ancho para centrar mejor */
+    height: 300px; /* Área de escritura más grande */
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #d4a017;
+    border-radius: 10px;
+    resize: vertical;
+    background-color: #fff9c4; /* Amarillo muy claro */
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Analyze Button */
+.analyze-button {
+    display: block;
+    width: 80%; /* Ajusta el ancho para centrar mejor */
+    margin: 0 auto 30px auto; /* Centra el botón */
+    padding: 14px;
+    background-color: #d4a017;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.analyze-button:hover {
+    background-color: #b38f00; /* Amarillo oscuro */
+}
+
+/* Contenedor de Resultados */
+.contenedor_2 {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 2px solid #d4a017;
+    border-radius: 10px;
+    background-color: #fffbe6; /* Fondo amarillo claro */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: #7a5901; /* Marrón */
+}
+
+/* Contenedor de la Tabla */
+.contenedor_tabla {
+    overflow-x: auto;
+    padding: 15px;
+    border: 2px solid #d4a017;
+    border-radius: 10px;
+    background-color: #fffbe6; /* Fondo amarillo claro */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla de Resultados */
+.contenedor_tabla table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    background-color: #fffde7; /* Amarillo muy claro */
+}
+
+.contenedor_tabla th, .contenedor_tabla td {
+    padding: 12px;
+    border: 1px solid #d4a017;
+    text-align: left;
+}
+
+.contenedor_tabla th {
+    background-color: #d4a017;
+    color: #fff;
+}
+
+.contenedor_tabla td {
+    color: #7a5901; /* Marrón */
+}
+
+.contadores {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contadores h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.contadores ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contadores li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1em;
+    color: #555;
+}
+
+.contadores li:last-child {
+    border-bottom: none;
+}
